@@ -1,4 +1,4 @@
-# openapi-client
+# credavenue-colending
 # Integration Document
 
 The following are the endpoints to be called during and pre/post disbursement state of a loan.

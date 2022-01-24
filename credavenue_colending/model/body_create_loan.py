@@ -238,6 +238,10 @@ class BodyCreateLoan(ModelNormal):
             'number_of_enquiries_12months': (int,),  # noqa: E501
             'number_of_writeoff_suitfiled_settled_in_the_last_12_months': (int,),  # noqa: E501
             'max_dpd_tradeline_last_12months': (int,),  # noqa: E501
+            'max_dpd_tradeline_last_6months': (int,),  # noqa: E501
+            'max_dpd_tradeline_last_3months': (int,),  # noqa: E501
+            'number_of_pl_enquiries_in_last_30days': (int,),  # noqa: E501
+            'value_of_total_outstanding_loans': (float,),  # noqa: E501
             'max_overdue_tradeline': (int,),  # noqa: E501
             'total_overdue_amount_in_last_12m': (float,),  # noqa: E501
             'amount_of_loan_settled_in_last_12m': (float,),  # noqa: E501
@@ -446,7 +450,11 @@ class BodyCreateLoan(ModelNormal):
         'number_of_enquiries_6months': 'number_of_enquiries_6months',  # noqa: E501
         'number_of_enquiries_12months': 'number_of_enquiries_12months',  # noqa: E501
         'number_of_writeoff_suitfiled_settled_in_the_last_12_months': 'number_of_writeoff_suitfiled_settled_in_the_last_12_months',  # noqa: E501
-        'max_dpd_tradeline_last_12months': 'max_dpd_tradeline_last_12months',  # noqa: E501
+        'max_dpd_tradeline_last_12months': 'max_dpd_tradeline_last_12months',  # noqa: 
+        'max_dpd_tradeline_last_6months': 'max_dpd_tradeline_last_6months',  # noqa: E501
+        'max_dpd_tradeline_last_3months': 'max_dpd_tradeline_last_3months',  # noqa: E501
+        'number_of_pl_enquiries_in_last_30days': 'number_of_pl_enquiries_in_last_30days',  # noqa: E501
+        'value_of_total_outstanding_loans': 'value_of_total_outstanding_loans',  # noqa: E501
         'max_overdue_tradeline': 'max_overdue_tradeline',  # noqa: E501
         'total_overdue_amount_in_last_12m': 'total_overdue_amount_in_last_12m',  # noqa: E501
         'amount_of_loan_settled_in_last_12m': 'amount_of_loan_settled_in_last_12m',  # noqa: E501
@@ -691,6 +699,10 @@ class BodyCreateLoan(ModelNormal):
             number_of_enquiries_12months (int): Number of Enquiries in the Last 12 Months per Bureau Report. [optional]  # noqa: E501
             number_of_writeoff_suitfiled_settled_in_the_last_12_months (int): Number of Writeoff Suitfiled Settled in the Last 12 Months. [optional]  # noqa: E501
             max_dpd_tradeline_last_12months (int): Maximum DPD Tradeline in the Last 12 Months. [optional]  # noqa: E501
+            max_dpd_tradeline_last_6months (int): Maximum DPD Tradeline in the Last 6 Months. [optional]  # noqa: E501
+            max_dpd_tradeline_last_3months (int): Maximum DPD Tradeline in the Last 3 Months. [optional]  # noqa: E501
+            number_of_pl_enquiries_in_last_30days (int): Number of Pl enquires in the Last 12 Months [optional]  # noqa: E501
+            value_of_total_outstanding_loans (float): Value of total outstanding loan in the Last 12 Months [optional]  # noqa: E501
             max_overdue_tradeline (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
             total_overdue_amount_in_last_12m (float): Total Overdue Amount in the Last 12 Months. [optional]  # noqa: E501
             amount_of_loan_settled_in_last_12m (float): Loan Amount Settled in the Last 12 Months. [optional]  # noqa: E501

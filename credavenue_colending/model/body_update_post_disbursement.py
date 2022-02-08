@@ -179,6 +179,10 @@ class BodyUpdatePostDisbursement(ModelNormal):
             'number_of_enquiries_12months': (int,),  # noqa: E501
             'number_of_writeoff_suitfiled_settled_12months': (int,),  # noqa: E501
             'max_dpd_tradeline_12months': (int,),  # noqa: E501
+            'max_dpd_tradeline_last_6months': (int,),  # noqa: E501
+            'max_dpd_tradeline_last_3months': (int,),  # noqa: E501
+            'number_of_pl_enquiries_in_last_30days': (int,),  # noqa: E501
+            'value_of_total_outstanding_loans': (float,),  # noqa: E501
             'max_overdue_tradeline': (int,),  # noqa: E501
             'total_overdue_amount_12months': (float,),  # noqa: E501
             'loan_amount_settled_12months': (float,),  # noqa: E501
@@ -297,6 +301,10 @@ class BodyUpdatePostDisbursement(ModelNormal):
         'number_of_enquiries_12months': 'number_of_enquiries_12months',  # noqa: E501
         'number_of_writeoff_suitfiled_settled_12months': 'number_of_writeoff_suitfiled_settled_12months',  # noqa: E501
         'max_dpd_tradeline_12months': 'max_dpd_tradeline_12months',  # noqa: E501
+        'max_dpd_tradeline_last_6months': 'max_dpd_tradeline_last_6months',  # noqa: E501
+        'max_dpd_tradeline_last_3months': 'max_dpd_tradeline_last_3months',  # noqa: E501
+        'number_of_pl_enquiries_in_last_30days': 'number_of_pl_enquiries_in_last_30days',  # noqa: E501
+        'value_of_total_outstanding_loans': 'value_of_total_outstanding_loans',  # noqa: E501
         'max_overdue_tradeline': 'max_overdue_tradeline',  # noqa: E501
         'total_overdue_amount_12months': 'total_overdue_amount_12months',  # noqa: E501
         'loan_amount_settled_12months': 'loan_amount_settled_12months',  # noqa: E501
@@ -449,6 +457,10 @@ class BodyUpdatePostDisbursement(ModelNormal):
             number_of_enquiries_6months (int): Number of Enquiries in the Last 6 Months per Bureau Report. [optional]  # noqa: E501
             number_of_enquiries_12months (int): Number of Enquiries in the Last 12 Months per Bureau Report. [optional]  # noqa: E501
             number_of_writeoff_suitfiled_settled_12months (int): Number of Writeoff Suitfiled Settled in the Last 12 Months. [optional]  # noqa: E501
+            max_dpd_tradeline_last_6months (int): Maximum DPD Tradeline in the Last 6 Months. [optional]  # noqa: E501
+            max_dpd_tradeline_last_3months (int): Maximum DPD Tradeline in the Last 3 Months. [optional]  # noqa: E501
+            number_of_pl_enquiries_in_last_30days (int): Number of Pl enquires in the Last 12 Months [optional]  # noqa: E501
+            value_of_total_outstanding_loans (float): Value of total outstanding loan in the Last 12 Months [optional]  # noqa: E501
             max_dpd_tradeline_12months (int): Maximum DPD Tradeline in the Last 12 Months. [optional]  # noqa: E501
             max_overdue_tradeline (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
             total_overdue_amount_12months (float): Total Overdue Amount in the Last 12 Months. [optional]  # noqa: E501
@@ -641,6 +653,10 @@ class BodyUpdatePostDisbursement(ModelNormal):
             number_of_enquiries_12months (int): Number of Enquiries in the Last 12 Months per Bureau Report. [optional]  # noqa: E501
             number_of_writeoff_suitfiled_settled_12months (int): Number of Writeoff Suitfiled Settled in the Last 12 Months. [optional]  # noqa: E501
             max_dpd_tradeline_12months (int): Maximum DPD Tradeline in the Last 12 Months. [optional]  # noqa: E501
+            max_dpd_tradeline_last_6months (int): Maximum DPD Tradeline in the Last 6 Months. [optional]  # noqa: E501
+            max_dpd_tradeline_last_3months (int): Maximum DPD Tradeline in the Last 3 Months. [optional]  # noqa: E501
+            number_of_pl_enquiries_in_last_30days (int): Number of Pl enquires in the Last 12 Months [optional]  # noqa: E501
+            value_of_total_outstanding_loans (float): Value of total outstanding loan in the Last 12 Months [optional]  # noqa: E501
             max_overdue_tradeline (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
             total_overdue_amount_12months (float): Total Overdue Amount in the Last 12 Months. [optional]  # noqa: E501
             loan_amount_settled_12months (float): Loan Amount Settled in the Last 12 Months. [optional]  # noqa: E501

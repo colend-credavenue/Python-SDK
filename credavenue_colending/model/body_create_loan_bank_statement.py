@@ -104,6 +104,8 @@ class BodyCreateLoanBankStatement(ModelNormal):
             'abb': (float,),  # noqa: E501
             'abd': (float,),  # noqa: E501
             'credit_summation': (str,),  # noqa: E501
+            'number_of_bank_transactions': (int,),  # noqa: E501
+            'number_of_inward_transactions': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -134,6 +136,8 @@ class BodyCreateLoanBankStatement(ModelNormal):
         'abb': 'abb',  # noqa: E501
         'abd': 'abd',  # noqa: E501
         'credit_summation': 'credit_summation',  # noqa: E501
+        'number_of_bank_transactions': 'number_of_bank_transactions',  # noqa: E501
+        'number_of_inward_transactions': 'number_of_inward_transactions',  # noqa: E501
     }
 
     read_only_vars = {
@@ -199,6 +203,8 @@ class BodyCreateLoanBankStatement(ModelNormal):
             abb (float): Average Bank Balance maintaiend on the EMI dates (Calculated by the Originator for the Last 12 Months). [optional]  # noqa: E501
             abd (float): Average Monthly Bank Deposits for the Last 12 Months. [optional]  # noqa: E501
             credit_summation (str): Sum of all the credits in the bank statement. [optional]  # noqa: E501
+            number_of_bank_transactions (int): Number of Bank Transactions. [optional]  # noqa: E501
+            number_of_inward_transactions (int): Number of Inward Transactions. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -302,6 +308,8 @@ class BodyCreateLoanBankStatement(ModelNormal):
             abb (float): Average Bank Balance maintaiend on the EMI dates (Calculated by the Originator for the Last 12 Months). [optional]  # noqa: E501
             abd (float): Average Monthly Bank Deposits for the Last 12 Months. [optional]  # noqa: E501
             credit_summation (str): Sum of all the credits in the bank statement. [optional]  # noqa: E501
+            number_of_bank_transactions (int): Number of Bank Transactions. [optional]  # noqa: E501
+            number_of_inward_transactions (int): Number of Inward Transactions. [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

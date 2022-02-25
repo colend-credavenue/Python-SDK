@@ -27,6 +27,8 @@ Name | Type | Description | Notes
 **abb** | **float** | Average Bank Balance maintaiend on the EMI dates (Calculated by the Originator for the Last 12 Months) | [optional] 
 **abd** | **float** | Average Monthly Bank Deposits for the Last 12 Months | [optional] 
 **credit_summation** | **str** | Sum of all the credits in the bank statement | [optional] 
+**number_of_bank_transactions** | **int** | Number of Bank Transactions | [optional]
+**number_of_inward_transactions** | **int** | Number of Inward Transactions | [optional]
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

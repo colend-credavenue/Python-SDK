@@ -210,6 +210,7 @@ class BodyCreateLoan(ModelNormal):
             'payslip_link_password': (str,),  # noqa: E501
             'tds_certificate_link': ([str],),  # noqa: E501
             'tds_certificate_link_password': (str,),  # noqa: E501
+            'ckyc_download_identifier': (str,),  # noqa: E501
             'business': (BodyCreateLoanBusiness,),  # noqa: E501
             'guarantors': ([BodyCreateLoanGuarantors],),  # noqa: E501
             'co_applicants': ([BodyCreateLoanCoApplicants],),  # noqa: E501
@@ -231,6 +232,9 @@ class BodyCreateLoan(ModelNormal):
             'no_of_credit_cards': (int,),  # noqa: E501
             'total_number_of_unsecured_loans': (int,),  # noqa: E501
             'value_of_total_unsecured_loans': (float,),  # noqa: E501
+            'writeoff_amount_suitfiled_settled_in_last_36_months': (float,),  # noqa: E501
+            'dpd_days_last_1_month': (int,),  # noqa: E501
+            'dpd_days_last_3_months': (int,),  # noqa: E501
             'total_number_of_loans': (int,),  # noqa: E501
             'value_of_total_loans': (float,),  # noqa: E501
             'number_of_enquiries_3months': (int,),  # noqa: E501
@@ -260,6 +264,9 @@ class BodyCreateLoan(ModelNormal):
             'fcf': (int,),  # noqa: E501
             'emi_obligations': (int,),  # noqa: E501
             'viability_ratio': (float,),  # noqa: E501
+            'loan_eligibility_to_income_ratio': (int,),  # noqa: E501
+            'risk_category': (str,),  # noqa: E501
+            'salary_credit_declared_income': (int,),  # noqa: E501
             'product_id': (str,),  # noqa: E501
             'client_loan_id': (str,),  # noqa: E501
             'application_id': (str,),  # noqa: E501
@@ -419,6 +426,7 @@ class BodyCreateLoan(ModelNormal):
         'payslip_link_password': 'payslip_link_password',  # noqa: E501
         'tds_certificate_link': 'tds_certificate_link',  # noqa: E501
         'tds_certificate_link_password': 'tds_certificate_link_password',  # noqa: E501
+        'ckyc_download_identifier': 'ckyc_download_identifier', # noqa: E501
         'business': 'business',  # noqa: E501
         'guarantors': 'guarantors',  # noqa: E501
         'co_applicants': 'co_applicants',  # noqa: E501
@@ -440,6 +448,9 @@ class BodyCreateLoan(ModelNormal):
         'no_of_credit_cards': 'no_of_credit_cards',  # noqa: E501
         'total_number_of_unsecured_loans': 'total_number_of_unsecured_loans',  # noqa: E501
         'value_of_total_unsecured_loans': 'value_of_total_unsecured_loans',  # noqa: E501
+        'writeoff_amount_suitfiled_settled_in_last_36_months': 'writeoff_amount_suitfiled_settled_in_last_36_months',  # noqa: E501
+        'dpd_days_last_1_month': 'dpd_days_last_1_month',  # noqa: E501
+        'dpd_days_last_3_months': 'dpd_days_last_3_months',  # noqa: E501
         'total_number_of_loans': 'total_number_of_loans',  # noqa: E501
         'value_of_total_loans': 'value_of_total_loans',  # noqa: E501
         'number_of_enquiries_3months': 'number_of_enquiries_3months',  # noqa: E501
@@ -469,6 +480,9 @@ class BodyCreateLoan(ModelNormal):
         'fcf': 'fcf',  # noqa: E501
         'emi_obligations': 'emi_obligations',  # noqa: E501
         'viability_ratio': 'viability_ratio',  # noqa: E501
+        'loan_eligibility_to_income_ratio': 'loan_eligibility_to_income_ratio',  # noqa: E501
+        'risk_category': 'risk_category',  # noqa: E501
+        'salary_credit_declared_income': 'salary_credit_declared_income',  # noqa: E501
         'product_id': 'product_id',  # noqa: E501
         'client_loan_id': 'client_loan_id',  # noqa: E501
         'application_id': 'application_id',  # noqa: E501
@@ -663,6 +677,7 @@ class BodyCreateLoan(ModelNormal):
             payslip_link_password (str): Last three month pay slip link password. [optional]  # noqa: E501
             tds_certificate_link ([str]): Last Three Year TDS Certificate Link. [optional]  # noqa: E501
             tds_certificate_link_password (str): Last Three Year TDS Certificate Link. [optional]  # noqa: E501
+            ckyc_download_identifier (str): CKYC Download Identifier. [optional]  # noqa: E501
             business (BodyCreateLoanBusiness): [optional]  # noqa: E501
             guarantors ([BodyCreateLoanGuarantors]): Refer table Guarantors for attributes. [optional]  # noqa: E501
             co_applicants ([BodyCreateLoanCoApplicants]): Refer table CoApplicants for attributes. [optional]  # noqa: E501
@@ -684,6 +699,9 @@ class BodyCreateLoan(ModelNormal):
             no_of_credit_cards (int): Total Number of Credit Cards per Bureau Report. [optional]  # noqa: E501
             total_number_of_unsecured_loans (int): Total Number of Unsecured Loans per Bureau Report. [optional]  # noqa: E501
             value_of_total_unsecured_loans (float): Total value of unsecured loans. [optional]  # noqa: E501
+            writeoff_amount_suitfiled_settled_in_last_36_months (float): Amount of writeoffs settled in last 36 months. [optional]  # noqa: E501
+            dpd_days_last_1_month (int): Number of DPD in last 1 month. [optional]  # noqa: E501
+            dpd_days_last_3_months (int): Number of DPD in last 3 months. [optional]  # noqa: E501
             total_number_of_loans (int): Total Number of Loans per Bureau Report. [optional]  # noqa: E501
             value_of_total_loans (float): Total value of loans. [optional]  # noqa: E501
             number_of_enquiries_3months (int): Number of Enquiries in the Last 3 Months per Bureau Report. [optional]  # noqa: E501
@@ -713,6 +731,9 @@ class BodyCreateLoan(ModelNormal):
             fcf (int): Free Cash Flows. [optional]  # noqa: E501
             emi_obligations (int): Existing EMI obligations. [optional]  # noqa: E501
             viability_ratio (float): Net Assets/ Debt. [optional]  # noqa: E501
+            loan_eligibility_to_income_ratio (int): The ratio of loan amount eligible to the personal income. [optional]  # noqa: E501
+            risk_category (str): Risk Category. [optional]  # noqa: E501
+            salary_credit_declared_income (int): Ratio of salary credit to customer account to the income declared. [optional]  # noqa: E501
             product_id (str): Product ID created in CA. [optional]  # noqa: E501
             client_loan_id (str): Loan ID as per Partner&#39;s LMS. [optional]  # noqa: E501
             application_id (str): Application ID as per Partner&#39;s CRM/LOS. [optional]  # noqa: E501
@@ -945,6 +966,7 @@ class BodyCreateLoan(ModelNormal):
             payslip_link_password (str): Last three month pay slip link password. [optional]  # noqa: E501
             tds_certificate_link ([str]): Last Three Year TDS Certificate Link. [optional]  # noqa: E501
             tds_certificate_link_password (str): Last Three Year TDS Certificate Link. [optional]  # noqa: E501
+            ckyc_download_identifier (str): CKYC Download Identifier. [optional]  # noqa: E501
             business (BodyCreateLoanBusiness): [optional]  # noqa: E501
             guarantors ([BodyCreateLoanGuarantors]): Refer table Guarantors for attributes. [optional]  # noqa: E501
             co_applicants ([BodyCreateLoanCoApplicants]): Refer table CoApplicants for attributes. [optional]  # noqa: E501
@@ -966,6 +988,9 @@ class BodyCreateLoan(ModelNormal):
             no_of_credit_cards (int): Total Number of Credit Cards per Bureau Report. [optional]  # noqa: E501
             total_number_of_unsecured_loans (int): Total Number of Unsecured Loans per Bureau Report. [optional]  # noqa: E501
             value_of_total_unsecured_loans (float): Total value of unsecured loans. [optional]  # noqa: E501
+            writeoff_amount_suitfiled_settled_in_last_36_months (float): Amount of writeoffs settled in last 36 months. [optional]  # noqa: E501
+            dpd_days_last_1_month (int): Number of DPD in last 1 month. [optional]  # noqa: E501
+            dpd_days_last_3_months (int): Number of DPD in last 3 months. [optional]  # noqa: E501
             total_number_of_loans (int): Total Number of Loans per Bureau Report. [optional]  # noqa: E501
             value_of_total_loans (float): Total value of loans. [optional]  # noqa: E501
             number_of_enquiries_3months (int): Number of Enquiries in the Last 3 Months per Bureau Report. [optional]  # noqa: E501
@@ -995,6 +1020,9 @@ class BodyCreateLoan(ModelNormal):
             fcf (int): Free Cash Flows. [optional]  # noqa: E501
             emi_obligations (int): Existing EMI obligations. [optional]  # noqa: E501
             viability_ratio (float): Net Assets/ Debt. [optional]  # noqa: E501
+            loan_eligibility_to_income_ratio (int): The ratio of loan amount eligible to the personal income. [optional]  # noqa: E501
+            risk_category (str): Risk Category. [optional]  # noqa: E501
+            salary_credit_declared_income (int): Ratio of salary credit to customer account to the income declared. [optional]  # noqa: E501
             product_id (str): Product ID created in CA. [optional]  # noqa: E501
             client_loan_id (str): Loan ID as per Partner&#39;s LMS. [optional]  # noqa: E501
             application_id (str): Application ID as per Partner&#39;s CRM/LOS. [optional]  # noqa: E501

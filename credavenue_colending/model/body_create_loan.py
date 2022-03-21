@@ -137,6 +137,7 @@ class BodyCreateLoan(ModelNormal):
             'current_state': (str,),  # noqa: E501
             'current_country': (str,),  # noqa: E501
             'current_pincode': (int,),  # noqa: E501
+            'pincode_verified': (str,),  # noqa: E501
             'residence_type_current_address': (str,),  # noqa: E501
             'years_of_stay_in_current_address': (int,),  # noqa: E501
             'permanent_address': (str,),  # noqa: E501
@@ -175,6 +176,7 @@ class BodyCreateLoan(ModelNormal):
             'aadhar_number': (str,),  # noqa: E501
             'aadhar_number_link': ([str],),  # noqa: E501
             'aadhar_number_link_password': (str,),  # noqa: E501
+            'aadhar_name_match': (str,),  # noqa: E501
             'voter_id_number': (str,),  # noqa: E501
             'voting_id_link': ([str],),  # noqa: E501
             'voting_id_link_password': (str,),  # noqa: E501
@@ -197,6 +199,8 @@ class BodyCreateLoan(ModelNormal):
             'utility_bills_link_password': (str,),  # noqa: E501
             'photo_link': ([str],),  # noqa: E501
             'photo_link_password': (str,),  # noqa: E501
+            'mobile_verification_flag': (str,),  # noqa: E501
+            'selfie_check_flag': (str,),  # noqa: E501
             'employer_tier': (str,),  # noqa: E501
             'employer_category': (str,),  # noqa: E501
             'employment_type': (str,),  # noqa: E501
@@ -237,8 +241,12 @@ class BodyCreateLoan(ModelNormal):
             'number_of_enquiries_6months': (int,),  # noqa: E501
             'number_of_enquiries_12months': (int,),  # noqa: E501
             'number_of_writeoff_suitfiled_settled_in_the_last_12_months': (int,),  # noqa: E501
+            'number_of_writeoff_suitfiled_settled_in_the_last_36_months': (int,),  # noqa: E501
             'max_dpd_tradeline_last_12months': (int,),  # noqa: E501
             'max_overdue_tradeline': (int,),  # noqa: E501
+            'number_of_30plus_dpd_in_last_3_months': (int,),  # noqa: E501
+            'number_of_60plus_dpd_in_last_6_months': (int,),  # noqa: E501
+            'number_of_30plus_dpd_in_last_12_months': (int,),  # noqa: E501
             'total_overdue_amount_in_last_12m': (float,),  # noqa: E501
             'amount_of_loan_settled_in_last_12m': (float,),  # noqa: E501
             'nature_of_loan_settled1': (str,),  # noqa: E501
@@ -346,6 +354,7 @@ class BodyCreateLoan(ModelNormal):
         'current_state': 'current_state',  # noqa: E501
         'current_country': 'current_country',  # noqa: E501
         'current_pincode': 'current_pincode',  # noqa: E501
+        'pincode_verified': 'pincode_verified',  # noqa: E501
         'residence_type_current_address': 'residence_type_current_address',  # noqa: E501
         'years_of_stay_in_current_address': 'years_of_stay_in_current_address',  # noqa: E501
         'permanent_address': 'permanent_address',  # noqa: E501
@@ -406,6 +415,8 @@ class BodyCreateLoan(ModelNormal):
         'utility_bills_link_password': 'utility_bills_link_password',  # noqa: E501
         'photo_link': 'photo_link',  # noqa: E501
         'photo_link_password': 'photo_link_password',  # noqa: E501
+        'mobile_verification_flag': 'mobile_verification_flag',  # noqa: E501
+        'selfie_check_flag': 'selfie_check_flag',  # noqa: E501
         'employer_tier': 'employer_tier',  # noqa: E501
         'employer_category': 'employer_category',  # noqa: E501
         'employment_type': 'employment_type',  # noqa: E501
@@ -446,8 +457,12 @@ class BodyCreateLoan(ModelNormal):
         'number_of_enquiries_6months': 'number_of_enquiries_6months',  # noqa: E501
         'number_of_enquiries_12months': 'number_of_enquiries_12months',  # noqa: E501
         'number_of_writeoff_suitfiled_settled_in_the_last_12_months': 'number_of_writeoff_suitfiled_settled_in_the_last_12_months',  # noqa: E501
+        'number_of_writeoff_suitfiled_settled_in_the_last_36_months': 'number_of_writeoff_suitfiled_settled_in_the_last_36_months',  # noqa: E501
         'max_dpd_tradeline_last_12months': 'max_dpd_tradeline_last_12months',  # noqa: E501
         'max_overdue_tradeline': 'max_overdue_tradeline',  # noqa: E501
+        'number_of_30plus_dpd_in_last_3_months': 'number_of_30plus_dpd_in_last_3_months',  # noqa: E501
+        'number_of_60plus_dpd_in_last_6_months': 'number_of_60plus_dpd_in_last_6_months',  # noqa: E501
+        'number_of_30plus_dpd_in_last_12_months': 'number_of_30plus_dpd_in_last_12_months',  # noqa: E501
         'total_overdue_amount_in_last_12m': 'total_overdue_amount_in_last_12m',  # noqa: E501
         'amount_of_loan_settled_in_last_12m': 'amount_of_loan_settled_in_last_12m',  # noqa: E501
         'nature_of_loan_settled1': 'nature_of_loan_settled1',  # noqa: E501
@@ -590,6 +605,7 @@ class BodyCreateLoan(ModelNormal):
             current_state (str): State in which applicant is currently residing. Free flowing for now. [optional]  # noqa: E501
             current_country (str): Country in which applicant is currently residing. Free flowing for now. [optional]  # noqa: E501
             current_pincode (int): Pincode of the current address. [optional]  # noqa: E501
+            pincode_verified (str): Is the pincode verified?. [optional]  # noqa: E501
             residence_type_current_address (str): rented / owned / leased. [optional]  # noqa: E501
             years_of_stay_in_current_address (int): How many years stayed in the current address. [optional]  # noqa: E501
             permanent_address (str): Permanent address of the customer. Free flowing for now. [optional]  # noqa: E501
@@ -650,6 +666,8 @@ class BodyCreateLoan(ModelNormal):
             utility_bills_link_password (str): Utility bills link password. [optional]  # noqa: E501
             photo_link ([str]): Photo Image of the Customer. [optional]  # noqa: E501
             photo_link_password (str): Photo Image password. [optional]  # noqa: E501
+            mobile_verification_flag (str): Mobile verification flag. [optional]  # noqa: E501
+            selfie_check_flag (str): Selfie Check Flag. [optional]  # noqa: E501
             employer_tier (str): tier_1, tier_2 etc. for  the employer. [optional]  # noqa: E501
             employer_category (str): Category of the employer. [optional]  # noqa: E501
             employment_type (str): salaried / self_employed. [optional]  # noqa: E501
@@ -690,8 +708,12 @@ class BodyCreateLoan(ModelNormal):
             number_of_enquiries_6months (int): Number of Enquiries in the Last 6 Months per Bureau Report. [optional]  # noqa: E501
             number_of_enquiries_12months (int): Number of Enquiries in the Last 12 Months per Bureau Report. [optional]  # noqa: E501
             number_of_writeoff_suitfiled_settled_in_the_last_12_months (int): Number of Writeoff Suitfiled Settled in the Last 12 Months. [optional]  # noqa: E501
+            number_of_writeoff_suitfiled_settled_in_the_last_36_months (int): Number of Writeoff Suitfiled Settled in the Last 36 Months. [optional]  # noqa: E501
             max_dpd_tradeline_last_12months (int): Maximum DPD Tradeline in the Last 12 Months. [optional]  # noqa: E501
             max_overdue_tradeline (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
+            number_of_30plus_dpd_in_last_3_months (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
+            number_of_60plus_dpd_in_last_6_months (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
+            number_of_30plus_dpd_in_last_12_months (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
             total_overdue_amount_in_last_12m (float): Total Overdue Amount in the Last 12 Months. [optional]  # noqa: E501
             amount_of_loan_settled_in_last_12m (float): Loan Amount Settled in the Last 12 Months. [optional]  # noqa: E501
             nature_of_loan_settled1 (str): The nature of past loan settlement if any (Loan 1) - Settled/ Closed/ Written-off. [optional]  # noqa: E501
@@ -872,6 +894,7 @@ class BodyCreateLoan(ModelNormal):
             current_state (str): State in which applicant is currently residing. Free flowing for now. [optional]  # noqa: E501
             current_country (str): Country in which applicant is currently residing. Free flowing for now. [optional]  # noqa: E501
             current_pincode (int): Pincode of the current address. [optional]  # noqa: E501
+            pincode_verified (str): Is the pincode verified?. [optional]  # noqa: E501
             residence_type_current_address (str): rented / owned / leased. [optional]  # noqa: E501
             years_of_stay_in_current_address (int): How many years stayed in the current address. [optional]  # noqa: E501
             permanent_address (str): Permanent address of the customer. Free flowing for now. [optional]  # noqa: E501
@@ -932,6 +955,8 @@ class BodyCreateLoan(ModelNormal):
             utility_bills_link_password (str): Utility bills link password. [optional]  # noqa: E501
             photo_link ([str]): Photo Image of the Customer. [optional]  # noqa: E501
             photo_link_password (str): Photo Image password. [optional]  # noqa: E501
+            mobile_verification_flag (str): Mobile verification flag. [optional]  # noqa: E501
+            selfie_check_flag (str): Selfie Check Flag. [optional]  # noqa: E501
             employer_tier (str): tier_1, tier_2 etc. for  the employer. [optional]  # noqa: E501
             employer_category (str): Category of the employer. [optional]  # noqa: E501
             employment_type (str): salaried / self_employed. [optional]  # noqa: E501
@@ -972,8 +997,12 @@ class BodyCreateLoan(ModelNormal):
             number_of_enquiries_6months (int): Number of Enquiries in the Last 6 Months per Bureau Report. [optional]  # noqa: E501
             number_of_enquiries_12months (int): Number of Enquiries in the Last 12 Months per Bureau Report. [optional]  # noqa: E501
             number_of_writeoff_suitfiled_settled_in_the_last_12_months (int): Number of Writeoff Suitfiled Settled in the Last 12 Months. [optional]  # noqa: E501
+            number_of_writeoff_suitfiled_settled_in_the_last_36_months (int): Number of Writeoff Suitfiled Settled in the Last 36 Months. [optional]  # noqa: E501
             max_dpd_tradeline_last_12months (int): Maximum DPD Tradeline in the Last 12 Months. [optional]  # noqa: E501
             max_overdue_tradeline (int): Maximum Overdue Tradeline. [optional]  # noqa: E501
+            number_of_30plus_dpd_in_last_3_months (int): Number of DPD > 30 days in last 3 Months. [optional]  # noqa: E501
+            number_of_60plus_dpd_in_last_6_months (int): Number of DPD > 60 days in last 6 Months. [optional]  # noqa: E501
+            number_of_30plus_dpd_in_last_12_months (int): Number of DPD > 30 days in last 12 Months. [optional]  # noqa: E501
             total_overdue_amount_in_last_12m (float): Total Overdue Amount in the Last 12 Months. [optional]  # noqa: E501
             amount_of_loan_settled_in_last_12m (float): Loan Amount Settled in the Last 12 Months. [optional]  # noqa: E501
             nature_of_loan_settled1 (str): The nature of past loan settlement if any (Loan 1) - Settled/ Closed/ Written-off. [optional]  # noqa: E501

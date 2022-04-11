@@ -84,6 +84,7 @@ class BodyDisburseLoanDisbursementAccounts(ModelNormal):
         return {
             'account_no': (str,),  # noqa: E501
             'disbursement_date': (date,),  # noqa: E501
+            'disbursement_value_date': (date,), # noqa: E501
             'disbursed_amount': (float,),  # noqa: E501
             'instrument_number': (str,),  # noqa: E501
             'instrument_type': (str,),  # noqa: E501
@@ -97,6 +98,7 @@ class BodyDisburseLoanDisbursementAccounts(ModelNormal):
     attribute_map = {
         'account_no': 'account_no',  # noqa: E501
         'disbursement_date': 'disbursement_date',  # noqa: E501
+        'disbursement_value_date':  'disbursement_date', # noqa: E501
         'disbursed_amount': 'disbursed_amount',  # noqa: E501
         'instrument_number': 'instrument_number',  # noqa: E501
         'instrument_type': 'instrument_type',  # noqa: E501
@@ -145,6 +147,7 @@ class BodyDisburseLoanDisbursementAccounts(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             account_no (str): Account number of the bank where disbursement needs to be done. [optional]  # noqa: E501
             disbursement_date (date): Disbursement date to the end customer. [optional]  # noqa: E501
+            disbursement_value_date (date): Date on which loan is disbursed. [optional]  # noqa: E501
             disbursed_amount (float): Disbursed Amount. [optional]  # noqa: E501
             instrument_number (str): UTR / Cheque Number. [optional]  # noqa: E501
             instrument_type (str): RTGS / NEFT / UPI / Cheque. [optional]  # noqa: E501
@@ -231,6 +234,7 @@ class BodyDisburseLoanDisbursementAccounts(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             account_no (str): Account number of the bank where disbursement needs to be done. [optional]  # noqa: E501
             disbursement_date (date): Disbursement date to the end customer. [optional]  # noqa: E501
+            disbursement_value_date (date): Date on which loan is disbursed. [optional]  # noqa: E501
             disbursed_amount (float): Disbursed Amount. [optional]  # noqa: E501
             instrument_number (str): UTR / Cheque Number. [optional]  # noqa: E501
             instrument_type (str): RTGS / NEFT / UPI / Cheque. [optional]  # noqa: E501

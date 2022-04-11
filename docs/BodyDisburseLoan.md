@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_repayment_date** | **date** | First repayment date as per repayment schedule | [optional] 
 **disbursement_date** | **date** | Disbursement date to the end customer | [optional] 
+**disbursement_value_date** | **date** | Date on which loan is disbursed | [optional]
 **instrument_number** | **str** | UTR / Cheque Number | [optional] 
 **instrument_type** | **str** | RTGS / NEFT / UPI / Cheque | [optional] 
 **penny_test_status** | **bool** | Penny Test Status | [optional] 

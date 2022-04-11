@@ -90,6 +90,7 @@ class BodyDisburseLoan(ModelNormal):
         return {
             'first_repayment_date': (date,),  # noqa: E501
             'disbursement_date': (date,),  # noqa: E501
+            'disbursement_value_date': (date,), # noqa: E501
             'instrument_number': (str,),  # noqa: E501
             'instrument_type': (str,),  # noqa: E501
             'penny_test_status': (bool,),  # noqa: E501
@@ -106,6 +107,7 @@ class BodyDisburseLoan(ModelNormal):
     attribute_map = {
         'first_repayment_date': 'first_repayment_date',  # noqa: E501
         'disbursement_date': 'disbursement_date',  # noqa: E501
+        'disbursement_value_date': 'disbursement_value_date', # noqa: E501
         'instrument_number': 'instrument_number',  # noqa: E501
         'instrument_type': 'instrument_type',  # noqa: E501
         'penny_test_status': 'penny_test_status',  # noqa: E501
@@ -157,6 +159,7 @@ class BodyDisburseLoan(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             first_repayment_date (date): First repayment date as per repayment schedule. [optional]  # noqa: E501
             disbursement_date (date): Disbursement date to the end customer. [optional]  # noqa: E501
+            disbursement_value_date (date): Date on which loan is disbursed. [optional]  # noqa: E501
             instrument_number (str): UTR / Cheque Number. [optional]  # noqa: E501
             instrument_type (str): RTGS / NEFT / UPI / Cheque. [optional]  # noqa: E501
             penny_test_status (bool): Penny Test Status. [optional]  # noqa: E501
@@ -246,6 +249,7 @@ class BodyDisburseLoan(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             first_repayment_date (date): First repayment date as per repayment schedule. [optional]  # noqa: E501
             disbursement_date (date): Disbursement date to the end customer. [optional]  # noqa: E501
+            disbursement_value_date (date): Date on which loan is disbursed. [optional]  # noqa: E501
             instrument_number (str): UTR / Cheque Number. [optional]  # noqa: E501
             instrument_type (str): RTGS / NEFT / UPI / Cheque. [optional]  # noqa: E501
             penny_test_status (bool): Penny Test Status. [optional]  # noqa: E501
